@@ -1,0 +1,73 @@
+This is the second file in which we will save the Git Commands which 
+will help us later.
+
+
+1️⃣ Setup Git (first time only)
+git config --global user.name "Your Name"       # Set your Git username
+git config --global user.email "you@example.com" # Set your Git email
+git config --list                               # Verify config
+________________________________________
+2️⃣ Start a Repository
+git init                         # Create a new Git repository in current folder
+git clone <url>                  # Clone an existing repo from GitHub
+________________________________________
+3️⃣ Check Status & Logs
+git status                       # Show changes (untracked/modified/staged)
+git log --oneline                # Show commit history in short form
+git log                          # Full commit history
+________________________________________
+4️⃣ Add & Commit Changes
+git add <file>                   # Stage a specific file
+git add .                        # Stage ALL changes
+git commit -m "Message"          # Commit staged changes with a message
+git commit -am "Message"         # Add & commit tracked files in one step
+________________________________________
+5️⃣ Work with Branches
+git branch                       # List branches
+git branch <name>                # Create a new branch
+git checkout <name>              # Switch to a branch
+git checkout -b <name>           # Create & switch to new branch
+git merge <branch>               # Merge another branch into current
+________________________________________
+6️⃣ Connect to GitHub Remote
+git remote -v                    # List remotes
+git remote add origin <url>      # Add GitHub repo as "origin"
+git remote set-url origin <url>  # Change remote URL
+git remote remove origin         # Remove a remote
+🔗 Example for HTTPS:
+git remote add origin https://github.com/USERNAME/REPO.git
+🔗 Example for SSH:
+git remote add origin git@github.com:USERNAME/REPO.git
+________________________________________
+7️⃣ Push & Pull
+git push -u origin master        # Push first time (set upstream branch)
+git push                         # Push changes
+git pull                         # Pull latest changes
+git fetch                        # Fetch changes (without merging)
+________________________________________
+8️⃣ Create Repo on GitHub (via CLI)
+gh auth login                    # Authenticate GitHub CLI
+gh repo create my-repo --public  # Create a repo on GitHub
+gh repo create my-repo --private # Create a private repo
+gh repo create my-repo --source=. --remote=origin --push  
+# Create repo from current folder, set remote, and push
+________________________________________
+9️⃣ Undo & Reset
+git restore <file>               # Undo changes in file (before staging)
+git reset <file>                 # Unstage a file
+git reset --hard HEAD            # Reset working dir to last commit
+git revert <commit_id>           # Undo commit by creating new commit
+________________________________________
+🔟 Useful Tips
+git diff                         # Show changes not staged
+git diff --staged                # Show staged changes
+git stash                        # Save work temporarily
+git stash pop                    # Reapply stashed work
+________________________________________
+✅ Typical Workflow (from scratch):
+git init
+echo "Hello World" > file.txt
+git add .
+git commit -m "First commit"
+gh repo create my-first-repo --public --source=. --remote=origin --push
+
