@@ -1,0 +1,2 @@
+This is the file in the repo the my-first-repo and it is the startup test for learning the purpose.
+So, now I want to commit it and now want to publish it on the Github as well.
